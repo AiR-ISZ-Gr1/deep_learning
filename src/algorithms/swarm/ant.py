@@ -55,6 +55,9 @@ class Ant:
         self.graph.nodes[node]['weight_left'] -= load
 
     def set_pause_ctr(self):
+        if len(self.path) < 2:
+            self.pause_ctr = np.inf
+            return 
         current_node, next_node = self.path[-2], self.path[-1]
         if current_node == next_node == START_NODE:
             self.pause_ctr = np.inf

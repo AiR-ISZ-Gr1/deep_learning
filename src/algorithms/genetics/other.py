@@ -169,12 +169,11 @@ def calculate_times(robots: AlgorithmOutput, warehouse: Warehouse) -> Dict[Robot
     for robot, (route, _) in robots.result.items():
 
         total_distance = 0
-
+        route = [0, *route, 0]
         for i in range(len(route) - 1):
 
             if route == [0, 0]:
                 break
-            
             u = route[i]
             v = route[i+1]
 
@@ -190,8 +189,7 @@ def calculate_times(robots: AlgorithmOutput, warehouse: Warehouse) -> Dict[Robot
                     continue
 
         distance_dict[robot] = float("{:.2f}".format(total_distance))
-
-    times_dict = {robot: float("{:.2f}".format(distance_dict[robot] * robot.calculate_velocity())) for robot in distance_dict.keys()}
+    times_dict = {robot: float("{:.2f}".format(distance_dict[robot] / robot.calculate_velocity())) for robot in distance_dict.keys()}
     return times_dict
 
 

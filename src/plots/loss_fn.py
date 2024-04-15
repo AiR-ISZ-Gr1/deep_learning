@@ -14,5 +14,5 @@ def plot_loss_fn(runtime_data, index):
     plt.xlabel('Iterations')
     plt.ylabel('Score')
 
-    plt.savefig(f'/workspaces/deep_learning/src/outputs/loss_fn{index}.png')
-    # plt.show()
+    # plt.savefig(f'/workspaces/deep_learning/src/outputs/loss_fn{index}.png')
+    plt.show()

@@ -17,8 +17,8 @@ def plot_all_robot_paths(solution, graph, index):
 
     plt.subplots_adjust(wspace=0.5, hspace=0.5)  # Adjust spacing
     plt.tight_layout()  # Adjust layout
-    plt.savefig(f'/workspaces/deep_learning/src/outputs/robot_paths{index}.png')
-    # plt.show()
+    # plt.savefig(f'/workspaces/deep_learning/src/outputs/robot_paths{index}.png')
+    plt.show()
 
 
 def plot_robot_path(path, graph):
